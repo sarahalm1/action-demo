@@ -1,0 +1,23 @@
+name: Hello World
+
+on: [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print Hello
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show Runner Info
+        run: |
+          echo "Operating system:"
+          uname -a
+          echo "Current directory:"
+          pwd
+          echo "Files:"
+          ls -la
